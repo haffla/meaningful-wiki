@@ -1,0 +1,11 @@
+{% extends "wiki.html" %}
+
+{% block main %}
+	{% autoescape off %}
+		{% if wiki %}
+		<div style="width: 100%; margin-top: 40px">{{wiki}}</div>
+		{% else %}
+		<p style="color: red">Some has already had this idea. But there is no content to display.</p>
+		{% endif %}
+	{% endautoescape %}
+{% endblock %}

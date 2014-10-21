@@ -1,0 +1,13 @@
+{% extends "wiki.html" %}
+
+{% block main %}
+
+<form method="post">
+	
+		<textarea name="content">{{old_content}}</textarea>
+		<div>
+			<input type="submit" value="Save">
+		</div>
+
+</form>
+{% endblock %}

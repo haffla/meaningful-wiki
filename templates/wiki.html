@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<title>Jack's Wiki</title>
+</head>
+<style type="text/css">
+
+	body {
+    position: relative;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #333;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+label + label {
+    margin-top: 20px;
+}
+
+input[text] {
+    width: 300px;
+    font-size: 15px;
+    padding: 2px;
+    font-family: monospace;
+}
+
+textarea {
+  margin: 30px;
+  width: 500px;
+  height: 400px;
+  font-size: 17px;
+  font-family: monospace;
+}
+
+</style>
+<body>
+  <div style="width: 100%; position: relative; text-align: right" class="navigation">
+    <div class="user_buttons">
+      {% if is_authorized %}
+      <span style="margin-right: 40px"><a href="{{edit_link}}">Edit</a></span>
+      <span>{{username}} (<a href="/logout">Logout</a>)</span>
+      {% else %}
+      <span><a href="/login">Login</a> | <a href="/signup">Signup</a></span>
+      {% endif %}
+    </div>
+  </div>
+
+	{% block main %}
+	{% endblock %}
+
+</body>
+</html>
